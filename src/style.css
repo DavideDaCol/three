@@ -35,17 +35,16 @@ p, li{
 }
 
 .cards{
+    max-width: 50%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
-.cards::content{
-    width: 50vw;
-    border: 1px solid red;
+.cards > h1{
+    margin: 0 auto;
 }
 
 #app{
