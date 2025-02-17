@@ -2,6 +2,8 @@
 import * as THREE from "three"
 const canvas = document.getElementById('three-canvas');
 
+console.log(window.clientHeight);
+
 //App parameters
 const cameraFov = 75;
 const aspectRatio = innerWidth/innerHeight;
@@ -9,6 +11,7 @@ const nearClip = 0.1;
 const farClip = 1000;
 const backgroundColor = new THREE.Color().setHex(0x2b2641);
 let newScrollY = 0;
+let scrollPercent = 0;
 
 //ThreeJS setup
 const scene = new THREE.Scene();
@@ -46,13 +49,15 @@ function animate() {
     boxMesh.rotation.x = Math.PI * newScrollY;
     camera.position.z = 0.6 + newScrollY*3;
     boxMesh.position.y = -1.2*newScrollY;
+    boxMesh.position.x = 0.9*newScrollY
 }
 
 animate();
 
 //EVENT: user is sctolling
 window.addEventListener("scroll", () => {
-    newScrollY = (window.scrollY / document.body
-        .clientHeight
-    );
+    newScrollY = 
+    (document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight));
+    scrollPercent = newScrollY * 100;
+    console.log(scrollPercent);
 })
