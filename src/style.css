@@ -18,11 +18,11 @@ h1{
     line-height: 100%;
 }
 
-p, li{
-    width: 80%;
+p, li, ul{
     margin: 0 2em;
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     letter-spacing: 0.1rem;
+    border: 1px solid red;
 }
 
 .hero{
@@ -40,11 +40,14 @@ p, li{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
+    border: 1px solid red;
 }
 
 .cards > h1{
     margin: 0 auto;
+    font-size: 5vw;
 }
 
 #app{
